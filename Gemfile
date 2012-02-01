@@ -17,3 +17,6 @@ gem "bson_ext", ">= 1.3.1"
 gem "mongoid", ">= 2.2.3"
 gem "devise", ">= 1.4.9"
 gem "heroku"
+gem 'autotest', :group => [:development, :test]
+gem 'autotest-growl', :group => [:development, :test]
+gem 'autotest-fsevent', :group => [:development, :test]

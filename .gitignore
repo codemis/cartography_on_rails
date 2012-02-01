@@ -5,3 +5,4 @@ tmp/
 tmp/**/* 
 .sass-cache/
 .DS_Store
+_new_features/
