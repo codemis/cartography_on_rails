@@ -20,7 +20,7 @@ describe Project do
 	
 	it "should generate a API key for the project" do
 		project = Project.create!(@attr)
-		project.api_key.should_not eq("")
+		project.api_key.should_not eq(nil)
 	end
 	
 	describe "function: create_api_key" do
@@ -28,7 +28,7 @@ describe Project do
 		it "should set the api_key for a project" do
 			project = Project.new(@attr)
 			project.create_api_key
-			project.api_key.should_not eq("")
+			project.api_key.should_not eq(nil)
 		end
 		
 	end
