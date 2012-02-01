@@ -1,0 +1,28 @@
+<header>
+  <h1>My Projects</h1>
+  <nav>
+    <ul>
+      <li><%= link_to "New Project", new_project_path %></li>
+    </ul>
+  </nav>
+</header>
+<section>
+  <table class="projects">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr id="project_<%= project.id %>" class="<%= stripe %>">
+          <td><%= project.name %></td>
+          <td class="actions">
+            <%= link_to "view", project_path(project) %> | <%= link_to "edit", edit_project_path(project) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
