@@ -4,7 +4,7 @@ Feature: Editing a Project
 		I want to edit my projects
 		
 	Background:
-		Given I am a logged user
+		Given I am a logged in user
 		And I have a project titled "My Church Map"
 		And I have a project titled "My People Group Map"
 		

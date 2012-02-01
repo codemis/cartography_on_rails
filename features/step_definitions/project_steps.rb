@@ -1,5 +1,5 @@
-Given /^I am a logged user$/ do
-  sign_in_user(valid_user)
+Given /^I am a logged in user$/ do
+	sign_up_new_user(valid_user)
 end
 
 Given /^I have a project titled "([^"]*)"$/ do |project_name|

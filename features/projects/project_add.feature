@@ -4,7 +4,7 @@ Feature: Adding a Project
 		I want to add a project
 		
 	Background:
-		Given I am a logged user
+		Given I am a logged in user
 	
 	Scenario: Should be able to add a project
 		Given I visit the "Add a Project" page
