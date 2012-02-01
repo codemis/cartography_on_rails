@@ -1,36 +1,14 @@
-### UTILITY METHODS ###
-def valid_user
-  @user ||= { :name => "Testy McUserton", :email => "testy@userton.com",
-    :password => "please", :password_confirmation => "please"}
-end
-
-def sign_up user
-  visit '/users/sign_up'
-  fill_in "Name", :with => user[:name]
-  fill_in "Email", :with => user[:email]
-  fill_in "Password", :with => user[:password]
-  fill_in "Password confirmation", :with => user[:password_confirmation]
-  click_button "Sign up"
-end
-
-def sign_in user
-  visit '/users/sign_in'
-  fill_in "Email", :with => user[:email]
-  fill_in "Password", :with => user[:password]
-  click_button "Sign in"
-end
-
 ### GIVEN ###
 Given /^I am not logged in$/ do
   visit '/users/sign_out'
 end
 
 Given /^I am logged in$/ do
-  sign_up valid_user
+  sign_up_new_user(valid_user)
 end
 
 Given /^I exist as a user$/ do
-  sign_up valid_user
+  sign_up_new_user(valid_user)
   visit '/users/sign_out'
 end
 
@@ -45,27 +23,27 @@ When /^I sign out$/ do
 end
 
 When /^I sign up with valid user data$/ do
-  sign_up valid_user
+  sign_up_new_user(valid_user)
 end
 
 When /^I sign up with an invalid email$/ do
   user = valid_user.merge(:email => "notanemail")
-  sign_up user
+  sign_up_new_user(user)
 end
 
 When /^I sign up without a confirmed password$/ do
   user = valid_user.merge(:password_confirmation => "")
-  sign_up user
+  sign_up_new_user(user)
 end
 
 When /^I sign up without a password$/ do
   user = valid_user.merge(:password => "")
-  sign_up user
+  sign_up_new_user(user)
 end
 
 When /^I sign up with a mismatched password confirmation$/ do
   user = valid_user.merge(:password_confirmation => "please123")
-  sign_up user
+  sign_up_new_user(user)
 end
 
 When /^I return to the site$/ do
@@ -74,11 +52,11 @@ end
 
 When /^I sign in with a wrong password$/ do
   user = valid_user.merge(:password => "wrongpass")
-  sign_in user
+  sign_in_user(user)
 end
 
 When /^I sign in with valid credentials$/ do
-  sign_in valid_user
+	sign_in_user(valid_user)
 end
 
 When /^I edit my account details$/ do
