@@ -1,0 +1,5 @@
+<ol>
+  <%= f.input :name, :label => "Name" %>
+  <%= f.input :map_type, :label => "Default Type of Map", :as => :select, :collection => Project::MAP_TYPES, :include_blank => false %>
+  <%= f.input :description, :label => "Description", :as => :text %>
+</ol>

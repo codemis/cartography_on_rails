@@ -16,5 +16,20 @@ module FormSubmissionHelpers
 	  click_button "Sign in"
 	end
 	
+	def create_new_project(project)
+		visit '/projects/new'
+		fill_in "Name", :with => project[:name]
+		fill_in "Description", :with => project[:description]
+		select "#{project[:map_type]}", :from => "project_map_type"
+		click_button "Add Project"
+	end
+	
+	def edit_current_project(project)
+		fill_in "Name", :with => project[:name]
+		fill_in "Description", :with => project[:description]
+		select "#{project[:pp_map_type]}", :from => "project_map_type"
+		click_button "Edit Project"
+	end
+	
 end
 World(FormSubmissionHelpers)

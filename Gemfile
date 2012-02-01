@@ -20,3 +20,4 @@ gem "heroku"
 gem 'autotest', :group => [:development, :test]
 gem 'autotest-growl', :group => [:development, :test]
 gem 'autotest-fsevent', :group => [:development, :test]
+gem 'formtastic'

@@ -1,0 +1,12 @@
+<section class="form">
+  <header>
+    <h1>Add a Project</h1>
+  </header>
+  <section>
+    <%= semantic_form_for @project do |f| %>
+      <%= form_error_messages(f) %>
+      <%= render :partial => "form", :locals => {:f => f} %>
+      <button type="submit">Add Project</button> <span>or <%= link_to "cancel", projects_path %></span>
+    <% end %>
+  </section>
+</section>
