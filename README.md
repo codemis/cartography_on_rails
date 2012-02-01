@@ -1,6 +1,6 @@
 # Cartography on Rails
 
-This is a new Ruby on Rails project designed to help Christian Nonprofits to generate Google Maps quickly.  It will provide an administration tool for adding projects, points of interest for that project, and will generate a Google Map KML file on the fly.
+This is a new Ruby on Rails project designed to help nonprofits to generate Google Maps quickly.  It will provide an administration tool for adding projects, points of interest for that project, and will generate a Google Map KML file on the fly.
 
 ## Requirements
 1. Rails 3.1.0
