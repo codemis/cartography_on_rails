@@ -22,6 +22,10 @@ module NavigationHelpers
 			new_project_path
 		when /My Projects/
 			projects_path
+		when /My Locations/
+			location_path
+		when /Add a Location/
+			new_location_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
