@@ -5,7 +5,7 @@ module FactoryHelpers
 	end
 	
 	def valid_project
-		@user ||= { :name => "My Special Project", :details => "A great project about nothing.", :map_type => "Hybrid"}
+		@project ||= { :name => "My Special Project", :details => "A great project about nothing.", :map_type => "Hybrid"}
 	end
 	
 end

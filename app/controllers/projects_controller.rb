@@ -10,13 +10,13 @@ class ProjectsController < ApplicationController
 	end
 	
 	def create
-    @project = Project.new params[:project]
-    if @project.save
-      flash[:notice] = "The project has been added."
-      redirect_to projects_path
-    else
-      render :action => :new
-    end
+		@project = Project.new params[:project]
+		if @project.save
+			flash[:notice] = "The project has been added."
+			redirect_to projects_path
+		else
+			render :action => :new
+		end
 	end
 	
 	def edit
@@ -26,15 +26,23 @@ class ProjectsController < ApplicationController
 	def update
 		@project = Project.find(params[:id])
 		if @project.update_attributes(params[:project])
-      flash[:notice] = "The project has been updated."
+		flash[:notice] = "The project has been updated."
 			redirect_to projects_path
-    else
-      render :action => :edit
-    end
+		else
+		render :action => :edit
+	end
 	end
 	
 	def show
 		@project = Project.find(params[:id])
+	end
+
+	def destroy
+		@project = Project.find(params[:id])
+		if @project.destroy
+			flash[:notice] = "The project has been deleted."
+			redirect_to projects_path
+		end
 	end
 	
 end

@@ -85,3 +85,12 @@ Then /^I should see the details for the "([^"]*)"$/ do |project_name|
 	page.should have_content "#{project.pp_map_type}"
 	page.should have_content "#{project.api_key}"
 end
+
+Then /^The Project "([^"]*)" should be deleted$/ do |project_name|
+  project = Project.first(:conditions => {:name => "#{project_name}"})
+  project.should eq(nil)
+end
+
+Then /^I should see a project deleted message$/ do
+  page.should have_content "has been deleted"
+end
