@@ -1,0 +1,13 @@
+<section class="form">
+  <header>
+    <h1>Add a Location</h1>
+  </header>
+  <section>
+    <%= semantic_form_for @location do |f| %>
+      <%= form_error_messages(f) %>
+      <%= render :partial => "form", :locals => {:f => f} %>
+      <button type="submit">Add Location</button> <span>or <%= link_to "cancel", locations_path %></span>
+    <% end %>
+  </section>
+</section>
+

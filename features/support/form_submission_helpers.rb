@@ -30,6 +30,15 @@ module FormSubmissionHelpers
 		select "#{project[:pp_map_type]}", :from => "project_map_type"
 		click_button "Edit Project"
 	end
+
+	def create_new_location(location)
+		visit '/locations/new'
+		fill_in "Name", :with => location[:name]
+		fill_in "Description", :with => location[:description]
+		select "#{location[:status]}", :from => "location_status"
+		fill_in "Latitude", :with => location[:lat]
+		fill_in "Longitude", :with => location[:long]
+	end
 	
 end
 World(FormSubmissionHelpers)
