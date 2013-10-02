@@ -38,6 +38,7 @@ module FormSubmissionHelpers
 		select "#{location[:status]}", :from => "location_status"
 		fill_in "Latitude", :with => location[:lat]
 		fill_in "Longitude", :with => location[:long]
+		click_button "Add Location"
 	end
 	
 end

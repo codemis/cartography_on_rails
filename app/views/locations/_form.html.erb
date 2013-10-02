@@ -1,6 +1,6 @@
 <ol>
 	<%= f.input :name, :label => "Name" %>
-	<%= f.input :status, :label => "Status", :as => :select, :collection => [1..5] %>
+	<%= f.input :status, :label => "Status Code", :as => :select, :collection => (1..5).to_a %>
 	<%= f.input :lat, :label => "Latitude" %>
 	<%= f.input :long, :label => "Longitude" %>
 	<%= f.input :description, :label => "Description", :as => :text %>

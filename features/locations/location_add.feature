@@ -16,4 +16,3 @@ Feature: Adding a Location
 		Given I visit the "Add a Location" page
 		When I add a location incorrectly
 		Then I should see a failure location added message
-

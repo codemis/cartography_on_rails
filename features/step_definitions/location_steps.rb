@@ -1,19 +1,23 @@
 When /^I add a location correctly$/ do
-  pending # express the regexp above with the code you wish you had
+  create_new_location(valid_location)
 end
 
 Then /^I should see a successful location added message$/ do
-  pending # express the regexp above with the code you wish you had
+  page.should have_content "location has been added"
 end
 
 Then /^I should see the location on the index page$/ do
-  pending # express the regexp above with the code you wish you had
+  visit '/locations'
+  page.should have_content valid_location[:name]
 end
 
 When /^I add a location incorrectly$/ do
-  pending # express the regexp above with the code you wish you had
+  location = valid_location.merge(:name => "")
+  create_new_location(location)
 end
 
 Then /^I should see a failure location added message$/ do
-  pending # express the regexp above with the code you wish you had
+  within('#flash_error') do
+    page.should have_content("Required fields can't be blank")
+  end
 end
