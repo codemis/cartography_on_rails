@@ -1,17 +1,9 @@
-Given /^I am a logged in user$/ do
-	sign_up_new_user(valid_user)
-end
-
 Given /^I have a project titled "([^"]*)"$/ do |project_name|
  	project = valid_project.merge(:name => "#{project_name}")
 	create_new_project(project)
 end
 
 Given /^I am on the "([^"]*)" page$/ do |page_name|
-  visit path_to(page_name)
-end
-
-Given /^I visit the "([^"]*)" page$/ do |page_name|
   visit path_to(page_name)
 end
 

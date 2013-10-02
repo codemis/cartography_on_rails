@@ -9,7 +9,7 @@ module FactoryHelpers
 	end
 	
 	def valid_location
-		@location ||= { :name => "My Special Location", :description => "A great location.", :status => "Sample status", :lat => "33.4925", :long => "118.8538"}
+		@location ||= { :name => "My Special Location", :description => "A great location.", :status => "3", :lat => "33.4925", :long => "118.8538"}
 	end
 	
 end
